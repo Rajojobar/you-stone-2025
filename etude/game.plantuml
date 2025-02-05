@@ -1,0 +1,47 @@
+
+@startuml
+
+class Card {
+    +id: int
+    +name: str
+    +description: str
+    +type: str
+}
+
+class Monster {
+    +attack: int
+    +defense: int
+    +monster_type: str
+}
+
+class Spell {
+    +spell_type: str
+}
+
+class Effect {
+    +id: int
+    +name: str
+    +effect_type: str
+    +description: str
+    +is_mandatory: bool
+    +is_continuous: bool
+}
+
+class Condition {
+    +id: int
+    +condition_type: str
+    +value: str
+}
+
+class EffectChain {
+    +id: int
+    +effects: List<Effect>
+}
+
+Card <|-- Monster
+Card <|-- Spell
+Card "1" -- "0..*" Effect : possède
+Effect "1" -- "0..*" Condition : a pour condition
+EffectChain "1" -- "0..*" Effect : contient
+
+@enduml
