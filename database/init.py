@@ -9,7 +9,7 @@ c = conn.cursor()
 
 # Exécution du script cards.sql 
 
-with open('cards.sql', 'r') as f:
+with open('database/cards.sql', 'r') as f:
     sql = f.read()
     c.executescript(sql)
 

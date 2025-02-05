@@ -1,6 +1,3 @@
-CREATE DATABASE IF NOT EXISTS `you-stone` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `you-stone`;
-
 DROP TABLE IF EXISTS `cartes_effets`;
 
 DROP TABLE IF EXISTS `cartes`;
